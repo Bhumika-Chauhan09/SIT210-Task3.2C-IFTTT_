@@ -43,19 +43,19 @@ void setup() {
 
 void loop() {
   ArduinoCloud.update();
-  float light;
-  light= LightSensor.GetLightIntensity();
-  Serial.println(light);
+  float sunLight;
+  sunLight= LightSensor.GetLightIntensity();
+  Serial.println(sunLight);
   
-  if(light > 700)
+  if(sunLight> 600)
   {
     message = "Sunlight Present";
-    delay(1000);
+    delay(900);
   }
-  if(light < 700)
+  if(sunLight< 600)
   {
     message = "No Sunlight";
-    delay(1000);
+    delay(900);
   }
 
 }
